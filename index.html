@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="monetag" content="69573c5c0b93ec69130fc76e62f23f86">
   <title>TagKing APK Download</title>
+
+  <!-- Monetag In-Page Push (Banner) Zone Script -->
+  <script>(function(s){s.dataset.zone='12182857',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -52,7 +55,7 @@
       border: 1px solid rgba(63, 185, 80, 0.3);
     }
 
-    /* 2. डाउनलोड कार्ड (सबसे ऊपर) */
+    /* 2. डाउनलोड कार्ड */
     .download-card {
       background: linear-gradient(145deg, #161b22, #0f141c);
       border: 1px solid #30363d;
@@ -92,7 +95,11 @@
       box-shadow: none;
     }
 
-    /* सामान्य फुल-चौड़ाई ऐड पट्टी (ऊपर वाला ऐड 1) */
+    /* ऐड्स पट्टियाँ */
+    .ad-strip-full, .side-ad-box {
+      cursor: pointer;
+      text-decoration: none;
+    }
     .ad-strip-full {
       width: 100%;
       min-height: 75px;
@@ -104,22 +111,25 @@
       justify-content: center;
       padding: 6px;
       text-align: center;
+      transition: border-color 0.2s;
+    }
+    .ad-strip-full:hover, .side-ad-box:hover {
+      border-color: #58a6ff;
     }
     .ad-label {
-      font-size: 0.7rem;
-      color: #6e7681;
+      font-size: 0.72rem;
+      color: #58a6ff;
       letter-spacing: 0.5px;
+      font-weight: 600;
     }
 
-    /* 3. वीडियो + बराबर में 2 ऐड वाला रो (Row) */
+    /* 3. वीडियो + साइड ऐड्स */
     .media-ad-row {
       display: flex;
       gap: 10px;
       width: 100%;
       align-items: stretch;
     }
-
-    /* आधी चौड़ाई वाली वीडियो */
     .half-video-box {
       flex: 1.1;
       background: #161b22;
@@ -155,7 +165,6 @@
       border-radius: 6px;
     }
 
-    /* साइड वाले 2 ऐड्स का कॉलम */
     .side-ads-column {
       flex: 0.9;
       display: flex;
@@ -173,9 +182,10 @@
       justify-content: center;
       padding: 6px;
       text-align: center;
+      transition: border-color 0.2s;
     }
 
-    /* 4. फ़ीचर्स पट्टी */
+    /* 4. फ़ीचर्स */
     .features-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -195,7 +205,7 @@
       color: #c9d1d9;
     }
 
-    /* 5. नीचे स्क्रीनशॉट्स */
+    /* 5. स्क्रीनशॉट्स */
     .screenshots-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -245,13 +255,13 @@
 
   <div class="wrapper">
 
-    <!-- 1. टॉप हेडर -->
+    <!-- 1. हेडर -->
     <div class="top-bar">
       <span class="brand">⚡ TagKing AI</span>
       <span class="badge">v1.1 • Verified APK</span>
     </div>
 
-    <!-- 2. डाउनलोड कार्ड + 10s टाइमर (सबसे ऊपर) -->
+    <!-- 2. डाउनलोड कार्ड -->
     <div class="download-card">
       <h2>TagKing APK डाउनलोड करें</h2>
       <p>Android 8.0+ • 100% सेफ़ और डायरेक्ट</p>
@@ -260,15 +270,13 @@
       </button>
     </div>
 
-    <!-- 3. विज्ञापन 1 (डाउनलोड के ठीक नीचे वाली फुल पट्टी) -->
-    <div class="ad-strip-full">
-      <span class="ad-label">[ ADVERTISEMENT 1 - TOP BANNER ]</span>
-    </div>
+    <!-- 3. शीर्ष विज्ञापन पट्टी -->
+    <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="ad-strip-full">
+      <span class="ad-label">🔥 [Sponsored Ad • Click Here]</span>
+    </a>
 
-    <!-- 4. आधी वीडियो + साइड में 2 विज्ञापन (कुल 3 विज्ञापन एक साथ सामने) -->
+    <!-- 4. वीडियो + साइड विज्ञापन -->
     <div class="media-ad-row">
-      
-      <!-- बाईं तरफ: ऑटो-प्ले इंस्टॉल गाइड वीडियो -->
       <div class="half-video-box">
         <div class="v-title">⚙️ इंस्टॉल गाइड</div>
         <div class="video-container">
@@ -279,24 +287,22 @@
         </div>
       </div>
 
-      <!-- दाईं तरफ: 2 विज्ञापन ऊपर-नीचे -->
       <div class="side-ads-column">
-        <div class="side-ad-box">
-          <span class="ad-label">[ ADVERTISEMENT 2 ]</span>
-        </div>
-        <div class="side-ad-box">
-          <span class="ad-label">[ ADVERTISEMENT 3 ]</span>
-        </div>
+        <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="side-ad-box">
+          <span class="ad-label">⚡ [Sponsored 1]</span>
+        </a>
+        <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="side-ad-box">
+          <span class="ad-label">⚡ [Sponsored 2]</span>
+        </a>
       </div>
-
     </div>
 
-    <!-- 5. नीचे एक और विज्ञापन पट्टी (स्क्रॉल करने पर) -->
-    <div class="ad-strip-full">
-      <span class="ad-label">[ ADVERTISEMENT 4 - SCROLL BANNER ]</span>
-    </div>
+    <!-- 5. निचला विज्ञापन -->
+    <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="ad-strip-full">
+      <span class="ad-label">🚀 [Trending Apps & Offers • Check Now]</span>
+    </a>
 
-    <!-- 6. ऐप के खास फीचर्स -->
+    <!-- 6. फीचर्स -->
     <div class="features-strip">
       <h3>🔥 TagKing के खास फीचर्स</h3>
       <div class="features-list">
@@ -306,7 +312,7 @@
       </div>
     </div>
 
-    <!-- 7. ऐप के स्क्रीनशॉट्स -->
+    <!-- 7. स्क्रीनशॉट्स -->
     <div class="screenshots-strip">
       <h3>📱 ऐप स्क्रीनशॉट्स</h3>
       <div class="screenshots-scroll">
@@ -329,6 +335,7 @@
   </div>
 
   <script>
+    const directAdLink = "https://uplcm.com/4/12182409";
     let timeLeft = 10;
     const downloadBtn = document.getElementById('downloadBtn');
 
@@ -344,7 +351,12 @@
     }, 1000);
 
     downloadBtn.addEventListener('click', () => {
-      window.location.href = "TagKing.apk";
+      // 1. नए टैब में विज्ञापन खोलें
+      window.open(directAdLink, '_blank');
+      // 2. उसी टैब में APK डाउनलोड शुरू करें
+      setTimeout(() => {
+        window.location.href = "TagKing.apk";
+      }, 500);
     });
   </script>
 
