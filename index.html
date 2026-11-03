@@ -213,18 +213,23 @@
       padding-bottom: 4px;
     }
     .shot-box {
-      min-width: 110px;
-      height: 180px;
+      min-width: 120px;
+      max-width: 130px;
+      height: 220px;
       background: #21262d;
       border: 1px solid #30363d;
-      border-radius: 6px;
+      border-radius: 8px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #8b949e;
-      font-size: 0.72rem;
-      text-align: center;
-      padding: 4px;
+      flex-shrink: 0;
+    }
+    .shot-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .footer {
@@ -257,7 +262,6 @@
     <!-- 3. विज्ञापन 1 (डाउनलोड के ठीक नीचे वाली फुल पट्टी) -->
     <div class="ad-strip-full">
       <span class="ad-label">[ ADVERTISEMENT 1 - TOP BANNER ]</span>
-      <!-- यहाँ ऊपर वाला ऐड कोड डालें -->
     </div>
 
     <!-- 4. आधी वीडियो + साइड में 2 विज्ञापन (कुल 3 विज्ञापन एक साथ सामने) -->
@@ -278,11 +282,9 @@
       <div class="side-ads-column">
         <div class="side-ad-box">
           <span class="ad-label">[ ADVERTISEMENT 2 ]</span>
-          <!-- यहाँ दूसरा ऐड कोड डालें -->
         </div>
         <div class="side-ad-box">
           <span class="ad-label">[ ADVERTISEMENT 3 ]</span>
-          <!-- यहाँ तीसरा ऐड कोड डालें -->
         </div>
       </div>
 
@@ -291,7 +293,6 @@
     <!-- 5. नीचे एक और विज्ञापन पट्टी (स्क्रॉल करने पर) -->
     <div class="ad-strip-full">
       <span class="ad-label">[ ADVERTISEMENT 4 - SCROLL BANNER ]</span>
-      <!-- यहाँ चौथा ऐड कोड डालें -->
     </div>
 
     <!-- 6. ऐप के खास फीचर्स -->
@@ -308,9 +309,15 @@
     <div class="screenshots-strip">
       <h3>📱 ऐप स्क्रीनशॉट्स</h3>
       <div class="screenshots-scroll">
-        <div class="shot-box">📸 स्क्रीनशॉट 1</div>
-        <div class="shot-box">📸 स्क्रीनशॉट 2</div>
-        <div class="shot-box">📸 स्क्रीनशॉट 3</div>
+        <div class="shot-box">
+          <img src="screen1.jpg" alt="TagKing Screen 1">
+        </div>
+        <div class="shot-box">
+          <img src="screen2.jpg" alt="TagKing Screen 2">
+        </div>
+        <div class="shot-box">
+          <img src="screen3.jpg" alt="TagKing Screen 3">
+        </div>
       </div>
     </div>
 
