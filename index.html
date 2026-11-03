@@ -25,10 +25,10 @@
       max-width: 440px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
-    /* 1. टॉप हेडर */
+    /* 1. हेडर */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -92,48 +92,56 @@
       box-shadow: none;
     }
 
-    /* 3. फिक्स डिस्प्ले बैनर कंटेनर (A-Ads) */
-    .ad-banner-box {
+    /* 468x60 लंबी पट्टियाँ (ऊपर और नीचे) */
+    .ad-strip-container {
       width: 100%;
-      min-height: 250px;
+      min-height: 64px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 2px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 8px 0;
       overflow: hidden;
     }
-    .ad-banner-box iframe {
+    .ad-strip-container iframe {
+      max-width: 100%;
+      height: 60px;
       border: 0;
-      padding: 0;
-      width: 300px;
-      height: 250px;
-      overflow: hidden;
       display: block;
     }
 
-    /* 4. वीडियो गाइड */
-    .video-card {
+    /* वीडियो + साइड 2 ऐड्स रो */
+    .media-ad-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      align-items: stretch;
+    }
+    .half-video-box {
+      flex: 1.15;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 10px;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .video-card .v-title {
-      font-size: 0.85rem;
+    .half-video-box .v-title {
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: #c9d1d9;
     }
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 आस्पेक्ट रेशियो */
+      padding-bottom: 155%; /* मोबाइल स्क्रीन वीडियो के लिए लंबा पोर्ट्रेट अनुपात */
       height: 0;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #000;
     }
     .video-container video {
@@ -143,10 +151,37 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 6px;
     }
 
-    /* 5. फ़ीचर्स */
+    /* दाएं तरफ 2 छोटे ऐड बॉक्स */
+    .side-ads-column {
+      flex: 0.85;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .side-ad-box {
+      flex: 1;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      overflow: hidden;
+      min-height: 130px;
+    }
+    .side-ad-box iframe {
+      border: 0;
+      width: 125px;
+      height: 125px;
+      display: block;
+    }
+
+    /* फ़ीचर्स */
     .features-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -166,7 +201,7 @@
       color: #c9d1d9;
     }
 
-    /* 6. स्क्रीनशॉट्स */
+    /* स्क्रीनशॉट्स */
     .screenshots-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -231,30 +266,54 @@
       </button>
     </div>
 
-    <!-- 3. शीर्ष फिक्स बैनर विज्ञापन -->
-    <!-- BEGIN AADS AD UNIT 2460915 -->
-    <div class="ad-banner-box" id="frame-top">
-      <iframe data-aa='2460915' src='//ad.a-ads.com/2460915/?size=300x250'></iframe>
+    <!-- 3. पहली लंबी पट्टी (468x60 स्ट्रिप) -->
+    <!-- BEGIN AADS AD UNIT 2460917 -->
+    <div class="ad-strip-container" id="strip-top">
+      <iframe data-aa='2460917' src='//ad.a-ads.com/2460917/?size=468x60'
+              style='border:0; padding:0; width:468px; height:60px; overflow:hidden; display:block; margin:auto'></iframe>
     </div>
-    <!-- END AADS AD UNIT 2460915 -->
+    <!-- END AADS AD UNIT 2460917 -->
 
-    <!-- 4. वीडियो गाइड -->
-    <div class="video-card">
-      <div class="v-title">⚙️ इंस्टॉल गाइड</div>
-      <div class="video-container">
-        <video autoplay muted loop playsinline width="100%" height="100%">
-          <source src="install-guide.mp4" type="video/mp4">
-          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
-        </video>
+    <!-- 4. वीडियो + साइड 2x (125x125) ऐड्स -->
+    <div class="media-ad-row">
+      <!-- बायाँ हिस्सा: वीडियो गाइड -->
+      <div class="half-video-box">
+        <div class="v-title">⚙️ इंस्टॉल गाइड</div>
+        <div class="video-container">
+          <video autoplay muted loop playsinline width="100%" height="100%">
+            <source src="install-guide.mp4" type="video/mp4">
+            आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+          </video>
+        </div>
+      </div>
+
+      <!-- दायाँ हिस्सा: ऊपर-नीचे 2 छोटे ऐड -->
+      <div class="side-ads-column">
+        <!-- साइड ऐड 1 [ADVERTISEMENT 2] -->
+        <!-- BEGIN AADS AD UNIT 2460919 -->
+        <div class="side-ad-box" id="side-ad-1">
+          <iframe data-aa='2460919' src='//ad.a-ads.com/2460919/?size=125x125'
+                  style='border:0; padding:0; width:125px; height:125px; overflow:hidden; display:block; margin:auto'></iframe>
+        </div>
+        <!-- END AADS AD UNIT 2460919 -->
+
+        <!-- साइड ऐड 2 [ADVERTISEMENT 3] -->
+        <!-- BEGIN AADS AD UNIT 2460919 -->
+        <div class="side-ad-box" id="side-ad-2">
+          <iframe data-aa='2460919' src='//ad.a-ads.com/2460919/?size=125x125'
+                  style='border:0; padding:0; width:125px; height:125px; overflow:hidden; display:block; margin:auto'></iframe>
+        </div>
+        <!-- END AADS AD UNIT 2460919 -->
       </div>
     </div>
 
-    <!-- 5. निचला फिक्स बैनर विज्ञापन -->
-    <!-- BEGIN AADS AD UNIT 2460915 -->
-    <div class="ad-banner-box" id="frame-bottom">
-      <iframe data-aa='2460915' src='//ad.a-ads.com/2460915/?size=300x250'></iframe>
+    <!-- 5. दूसरी लंबी पट्टी [ADVERTISEMENT 4] (468x60 स्ट्रिप) -->
+    <!-- BEGIN AADS AD UNIT 2460917 -->
+    <div class="ad-strip-container" id="strip-bottom">
+      <iframe data-aa='2460917' src='//ad.a-ads.com/2460917/?size=468x60'
+              style='border:0; padding:0; width:468px; height:60px; overflow:hidden; display:block; margin:auto'></iframe>
     </div>
-    <!-- END AADS AD UNIT 2460915 -->
+    <!-- END AADS AD UNIT 2460917 -->
 
     <!-- 6. फीचर्स -->
     <div class="features-strip">
@@ -304,7 +363,6 @@
     }, 1000);
 
     downloadBtn.addEventListener('click', () => {
-      // सीधी APK फाइल डाउनलोड होगी बिना किसी फालतू पॉपअप/ऐड रीडायरेक्ट के
       window.location.href = "TagKing.apk";
     });
   </script>
