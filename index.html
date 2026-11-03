@@ -17,17 +17,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 14px 12px 40px;
+      padding: 12px 10px 40px;
     }
     .wrapper {
       width: 100%;
       max-width: 440px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
-    /* 1. कॉम्पैक्ट टॉप हेडर */
+    /* 1. टॉप हेडर */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -51,38 +51,38 @@
       border: 1px solid rgba(63, 185, 80, 0.3);
     }
 
-    /* 2. डाउनलोड बॉक्स (सबसे ऊपर) */
+    /* 2. डाउनलोड कार्ड (सबसे ऊपर) */
     .download-card {
       background: linear-gradient(145deg, #161b22, #0f141c);
       border: 1px solid #30363d;
-      border-radius: 14px;
-      padding: 16px 14px;
+      border-radius: 12px;
+      padding: 14px 12px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
     .download-card h2 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       margin-bottom: 4px;
     }
     .download-card p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #8b949e;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .btn-download {
       display: block;
       width: 100%;
-      padding: 14px 10px;
+      padding: 12px 10px;
       border: none;
-      border-radius: 10px;
-      font-size: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.3s ease;
       background: linear-gradient(90deg, #ff5e62, #ff9966);
       color: #ffffff;
-      box-shadow: 0 4px 15px rgba(255, 94, 98, 0.35);
+      box-shadow: 0 4px 12px rgba(255, 94, 98, 0.35);
     }
     .btn-download:disabled {
       background: #21262d;
@@ -91,48 +91,57 @@
       box-shadow: none;
     }
 
-    /* ऐड्स के लिए साफ़ और स्पष्ट पट्टियाँ */
-    .ad-strip {
+    /* सामान्य फुल-चौड़ाई ऐड पट्टी (ऊपर वाला ऐड 1) */
+    .ad-strip-full {
       width: 100%;
-      min-height: 80px;
+      min-height: 75px;
       background: #161b22;
       border: 1px dashed #30363d;
-      border-radius: 10px;
+      border-radius: 8px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 8px;
-      overflow: hidden;
+      padding: 6px;
       text-align: center;
     }
-    .ad-strip span {
-      font-size: 0.72rem;
+    .ad-label {
+      font-size: 0.7rem;
       color: #6e7681;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
-    /* 3. वीडियो पट्टी */
-    .video-strip {
+    /* 3. वीडियो + बराबर में 2 ऐड वाला रो (Row) */
+    .media-ad-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    /* आधी चौड़ाई वाली वीडियो */
+    .half-video-box {
+      flex: 1.1;
       background: #161b22;
       border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 10px;
-    }
-    .video-strip .title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 8px;
+      border-radius: 10px;
+      padding: 6px;
       display: flex;
-      align-items: center;
-      gap: 6px;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .half-video-box .v-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #c9d1d9;
     }
     .video-container {
       position: relative;
-      padding-bottom: 56.25%;
+      width: 100%;
+      padding-bottom: 120%; /* रील्स/शॉर्ट्स या पोर्ट्रेट जैसा साइज ताकि ऐड के बराबर फिट बैठे */
       height: 0;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #000;
     }
     .video-container iframe {
@@ -144,79 +153,84 @@
       border: 0;
     }
 
-    /* 4. फ़ीचर पट्टी */
+    /* साइड वाले 2 ऐड्स का कॉलम */
+    .side-ads-column {
+      flex: 0.9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .side-ad-box {
+      flex: 1;
+      min-height: 80px;
+      background: #161b22;
+      border: 1px dashed #30363d;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      text-align: center;
+    }
+
+    /* 4. फ़ीचर्स पट्टी */
     .features-strip {
       background: #161b22;
       border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 12px 14px;
+      border-radius: 10px;
+      padding: 10px 12px;
     }
     .features-strip h3 {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
       color: #58a6ff;
     }
     .features-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      font-size: 0.82rem;
+      gap: 6px;
+      font-size: 0.78rem;
       color: #c9d1d9;
     }
-    .features-list div {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
 
-    /* 5. स्क्रीनशॉट सेक्शन */
+    /* 5. नीचे स्क्रीनशॉट्स */
     .screenshots-strip {
       background: #161b22;
       border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 12px 10px;
+      border-radius: 10px;
+      padding: 10px 8px;
     }
     .screenshots-strip h3 {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
       padding-left: 4px;
     }
     .screenshots-scroll {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       overflow-x: auto;
-      padding-bottom: 6px;
-      scroll-snap-type: x mandatory;
+      padding-bottom: 4px;
     }
     .shot-box {
-      min-width: 120px;
-      height: 210px;
+      min-width: 110px;
+      height: 180px;
       background: #21262d;
       border: 1px solid #30363d;
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #8b949e;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-align: center;
-      padding: 6px;
-      scroll-snap-align: start;
-    }
-    .shot-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
+      padding: 4px;
     }
 
-    /* फ़ूटर */
     .footer {
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: #6e7681;
-      margin-top: 10px;
+      margin-top: 6px;
     }
   </style>
 </head>
@@ -224,74 +238,75 @@
 
   <div class="wrapper">
 
-    <!-- टॉप हेडर (छोटा व साफ़) -->
+    <!-- टॉप हेडर -->
     <div class="top-bar">
       <span class="brand">⚡ TagKing AI</span>
       <span class="badge">v1.1 • Verified APK</span>
     </div>
 
-    <!-- 1. डाउनलोड कार्ड + टाइमर (सबसे ऊपर) -->
+    <!-- 1. डाउनलोड कार्ड + 10s टाइमर (सबसे ऊपर) -->
     <div class="download-card">
       <h2>TagKing APK डाउनलोड करें</h2>
-      <p>Android 8.0+ • 100% सेफ़ और सिक्योर</p>
+      <p>Android 8.0+ • 100% सेफ़ और डायरेक्ट</p>
       <button id="downloadBtn" class="btn-download" disabled>
         ⏳ 10 सेकंड प्रतीक्षा करें...
       </button>
     </div>
 
-    <!-- 2. ऐड पट्टी 1 -->
-    <div class="ad-strip">
-      <span>[ ADVERTISEMENT SLOT 1 ]</span>
-      <!-- यहाँ Adsterra / Adsense का कोड पेस्ट करें -->
+    <!-- 2. विज्ञापन 1 (डाउनलोड के ठीक नीचे वाली फुल पट्टी) -->
+    <div class="ad-strip-full">
+      <span class="ad-label">[ ADVERTISEMENT 1 - TOP BANNER ]</span>
+      <!-- यहाँ ऊपर वाला ऐड कोड डालें -->
     </div>
 
-    <!-- 3. वीडियो प्लेयर पट्टी -->
-    <div class="video-strip">
-      <div class="title">🎬 ऐप का लाइव डेमो देखें</div>
-      <div class="video-container">
-        <!-- यहाँ अपनी YouTube वीडियो का Embed लिंक डाल सकते हैं -->
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <!-- 3. आधी वीडियो + साइड में 2 विज्ञापन (कुल 3 विज्ञापन एक साथ सामने) -->
+    <div class="media-ad-row">
+      
+      <!-- बाईं तरफ: आधी चौड़ाई की वीडियो -->
+      <div class="half-video-box">
+        <div class="v-title">🎬 ऐप डेमो</div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
       </div>
+
+      <!-- दाईं तरफ: 2 विज्ञापन ऊपर-नीचे -->
+      <div class="side-ads-column">
+        <div class="side-ad-box">
+          <span class="ad-label">[ ADVERTISEMENT 2 ]</span>
+          <!-- यहाँ दूसरा ऐड कोड डालें -->
+        </div>
+        <div class="side-ad-box">
+          <span class="ad-label">[ ADVERTISEMENT 3 ]</span>
+          <!-- यहाँ तीसरा ऐड कोड डालें -->
+        </div>
+      </div>
+
     </div>
 
-    <!-- 4. ऐड पट्टी 2 -->
-    <div class="ad-strip">
-      <span>[ ADVERTISEMENT SLOT 2 ]</span>
-      <!-- यहाँ दूसरा ऐड कोड पेस्ट करें -->
+    <!-- 4. नीचे एक और विज्ञापन पट्टी (स्क्रॉल करने पर) -->
+    <div class="ad-strip-full">
+      <span class="ad-label">[ ADVERTISEMENT 4 - SCROLL BANNER ]</span>
+      <!-- यहाँ चौथा ऐड कोड डालें -->
     </div>
 
-    <!-- 5. ऐप के मुख्य फीचर्स (छोटी पट्टी) -->
+    <!-- 5. ऐप के खास फीचर्स -->
     <div class="features-strip">
       <h3>🔥 TagKing के खास फीचर्स</h3>
       <div class="features-list">
         <div>🚀 1-क्लिक में वायरल AI हुक्स और स्क्रिप्ट्स</div>
         <div>🎯 ट्रेंडिंग और गुप्त SEO कीवर्ड्स</div>
-        <div>📈 Reels और Shorts रीच 10x बूस्टर</div>
+        <div>📈 Reels और Shorts रीच बूस्टर</div>
       </div>
     </div>
 
-    <!-- 6. ऐड पट्टी 3 -->
-    <div class="ad-strip">
-      <span>[ ADVERTISEMENT SLOT 3 ]</span>
-      <!-- यहाँ तीसरा ऐड कोड पेस्ट करें -->
-    </div>
-
-    <!-- 7. ऐप स्क्रीनशॉट्स -->
+    <!-- 6. ऐप के स्क्रीनशॉट्स -->
     <div class="screenshots-strip">
       <h3>📱 ऐप स्क्रीनशॉट्स</h3>
       <div class="screenshots-scroll">
-        <div class="shot-box">
-          <!-- <img src="screen1.png" alt="Screen 1"> -->
-          📸 स्क्रीनशॉट 1<br>(मुख्य स्क्रीन)
-        </div>
-        <div class="shot-box">
-          <!-- <img src="screen2.png" alt="Screen 2"> -->
-          📸 स्क्रीनशॉट 2<br>(टैग जनरेटर)
-        </div>
-        <div class="shot-box">
-          <!-- <img src="screen3.png" alt="Screen 3"> -->
-          📸 स्क्रीनशॉट 3<br>(हुक लाइब्रेरी)
-        </div>
+        <div class="shot-box">📸 स्क्रीनशॉट 1</div>
+        <div class="shot-box">📸 स्क्रीनशॉट 2</div>
+        <div class="shot-box">📸 स्क्रीनशॉट 3</div>
       </div>
     </div>
 
@@ -302,7 +317,6 @@
   </div>
 
   <script>
-    // 10 सेकंड का डाउनलोड टाइमर
     let timeLeft = 10;
     const downloadBtn = document.getElementById('downloadBtn');
 
@@ -317,7 +331,6 @@
       }
     }, 1000);
 
-    // क्लिक करने पर सीधे APK डाउनलोड
     downloadBtn.addEventListener('click', () => {
       window.location.href = "TagKing.apk";
     });
