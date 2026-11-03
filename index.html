@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TagKing 🔥 - AI Viral Reels & Hashtag Kit</title>
+  <meta name="description" content="TagKing APK डाउनलोड करें - Instagram Reels और YouTube Shorts के लिए 1-क्लिक AI हुक, कीवर्ड्स और वायरल हैशटैग।" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-dark: #070913;
+      --bg-card: #0f172a;
+      --accent: #ff4757;
+      --accent-glow: #ff6b81;
+      --gold: #ffa502;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 900px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 71, 87, 0.15) 0%, rgba(255, 165, 2, 0.08) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0 1.5rem;
+    }
+
+    .app-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255, 71, 87, 0.12);
+      border: 1px solid rgba(255, 71, 87, 0.3);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff, #ffa502, #ff4757);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .subheading {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .ad-banner-box {
+      width: 100%;
+      min-height: 90px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.8rem 0;
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .video-card p {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 8px;
+      text-align: center;
+      color: #e2e8f0;
+    }
+
+    .yt-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 2.5rem;
+    }
+
+    .yt-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .download-wrapper {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(7, 9, 19, 0.95));
+      border: 1px solid rgba(255, 71, 87, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 71, 87, 0.15);
+      border-radius: 24px;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .timer-display {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      min-height: 28px;
+    }
+
+    .btn-timer-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #ff4757, #ff6b81);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .btn-timer-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(255, 71, 87, 0.6);
+    }
+
+    .btn-download-final {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px 28px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      text-decoration: none;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.45);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    @media (max-width: 640px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-card video {
+        height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <div class="container">
+    <header>
+      <div class="app-badge">🔥 2026 ALGORITHM CRACKED</div>
+      <h1>TagKing AI Studio</h1>
+      <p class="subheading">Reels और Shorts को 1-क्लिक में वायरल करने वाले ट्रेंडिंग AI Hooks, गुप्त SEO Keywords और Hashtags!</p>
+    </header>
+
+    <div class="ad-banner-box">
+      [ ADVERTISEMENT SLOT 1 ]
+    </div>
+
+    <div class="section-title">🎬 ऐप कैसे काम करता है (Live Demo)</div>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls poster="">
+          <source src="demo1.mp4" type="video/mp4">
+          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+        </video>
+        <p>1-क्लिक में वायरल Hook निकालें 🚀</p>
+      </div>
+
+      <div class="video-card">
+        <video controls poster="">
+          <source src="demo2.mp4" type="video/mp4">
+          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+        </video>
+        <p>Explore Page वाले गुप्त Keywords 🔥</p>
+      </div>
+    </div>
+
+    <div class="section-title">📺 पूरी गाइड देखें (YouTube)</div>
+    <div class="yt-container">
+      <iframe 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="TagKing Video Guide" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="ad-banner-box">
+      [ ADVERTISEMENT SLOT 2 - HIGH REVENUE ]
+    </div>
+
+    <div class="download-wrapper">
+      <h2 style="font-family:'Outfit'; font-size:1.8rem; margin-bottom:8px;">TagKing APK डाउनलोड करें</h2>
+      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.2rem;">लेटेस्ट वर्जन (v1.1) • 100% सुरक्षित और वेरीफाइड</p>
+
+      <div id="timerText" class="timer-display"></div>
+
+      <button id="startTimerBtn" class="btn-timer-trigger" onclick="startDownloadTimer()">
+        ⚡ डाउनलोड लिंक तैयार करें
+      </button>
+
+      <a id="finalDownloadBtn" href="TagKing.apk" class="btn-download-final" download>
+        📥 TagKing APK डाउनलोड करें (Direct)
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function startDownloadTimer() {
+      const triggerBtn = document.getElementById('startTimerBtn');
+      const timerDisplay = document.getElementById('timerText');
+      const finalBtn = document.getElementById('finalDownloadBtn');
+
+      triggerBtn.style.display = 'none';
+      let timeLeft = 10;
+
+      timerDisplay.innerHTML = `⏳ कृपया इंतज़ार करें: <span style="font-size:1.4rem; color:#ff4757;">${timeLeft}</span> सेकंड...`;
+
+      const countdown = setInterval(() => {
+        timeLeft--;
+        if (timeLeft > 0) {
+          timerDisplay.innerHTML = `⏳ कृपया इंतज़ार करें: <span style="font-size:1.4rem; color:#ff4757;">${timeLeft}</span> सेकंड...`;
+        } else {
+          clearInterval(countdown);
+          timerDisplay.innerHTML = "✅ लिंक तैयार है!";
+          finalBtn.style.display = 'inline-flex';
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
