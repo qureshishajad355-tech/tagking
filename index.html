@@ -3,167 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TagKing 🔥 - AI Viral Reels & Hashtag Kit</title>
-  <meta name="description" content="TagKing APK डाउनलोड करें - Instagram Reels और YouTube Shorts के लिए 1-क्लिक AI हुक, कीवर्ड्स और वायरल हैशटैग।" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>TagKing APK Download</title>
   <style>
-    *, *::before, *::after {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
-
-    :root {
-      --bg-dark: #070913;
-      --bg-card: #0f172a;
-      --accent: #ff4757;
-      --accent-glow: #ff6b81;
-      --gold: #ffa502;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      min-height: 100vh;
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    .bg-glow {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 900px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255, 71, 87, 0.15) 0%, rgba(255, 165, 2, 0.08) 40%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 0 1.5rem;
-    }
-
-    .app-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(255, 71, 87, 0.12);
-      border: 1px solid rgba(255, 71, 87, 0.3);
-      border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 900;
-      line-height: 1.2;
-      background: linear-gradient(135deg, #ffffff, #ffa502, #ff4757);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
-    }
-
-    .subheading {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .ad-banner-box {
-      width: 100%;
-      min-height: 90px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
+      background: #0d1117;
+      color: #f0f6fc;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px 12px 40px;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* 1. कॉम्पैक्ट टॉप हेडर */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .top-bar .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ff7b72;
+    }
+    .top-bar .badge {
+      font-size: 0.72rem;
+      color: #3fb950;
+      background: rgba(63, 185, 80, 0.15);
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(63, 185, 80, 0.3);
+    }
+
+    /* 2. डाउनलोड बॉक्स (सबसे ऊपर) */
+    .download-card {
+      background: linear-gradient(145deg, #161b22, #0f141c);
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .download-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .download-card p {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 12px;
+    }
+    .btn-download {
+      display: block;
+      width: 100%;
+      padding: 14px 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: linear-gradient(90deg, #ff5e62, #ff9966);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(255, 94, 98, 0.35);
+    }
+    .btn-download:disabled {
+      background: #21262d;
+      color: #8b949e;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* ऐड्स के लिए साफ़ और स्पष्ट पट्टियाँ */
+    .ad-strip {
+      width: 100%;
+      min-height: 80px;
+      background: #161b22;
+      border: 1px dashed #30363d;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 1.8rem 0;
-      color: #64748b;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
+      padding: 8px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .ad-strip span {
+      font-size: 0.72rem;
+      color: #6e7681;
       letter-spacing: 1px;
     }
 
-    .section-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin: 2rem 0 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .video-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      overflow: hidden;
+    /* 3. वीडियो पट्टी */
+    .video-strip {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
       padding: 10px;
     }
-
-    .video-card video {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #000;
-    }
-
-    .video-card p {
-      font-size: 0.9rem;
+    .video-strip .title {
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-top: 8px;
-      text-align: center;
-      color: #e2e8f0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-
-    .yt-container {
+    .video-container {
       position: relative;
-      width: 100%;
       padding-bottom: 56.25%;
       height: 0;
-      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 2.5rem;
+      border-radius: 8px;
+      background: #000;
     }
-
-    .yt-container iframe {
+    .video-container iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -172,170 +144,184 @@
       border: 0;
     }
 
-    .download-wrapper {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(7, 9, 19, 0.95));
-      border: 1px solid rgba(255, 71, 87, 0.3);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 71, 87, 0.15);
-      border-radius: 24px;
-      padding: 2.2rem 1.5rem;
+    /* 4. फ़ीचर पट्टी */
+    .features-strip {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .features-strip h3 {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: #58a6ff;
+    }
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #c9d1d9;
+    }
+    .features-list div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 5. स्क्रीनशॉट सेक्शन */
+    .screenshots-strip {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 12px 10px;
+    }
+    .screenshots-strip h3 {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+    .screenshots-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+    }
+    .shot-box {
+      min-width: 120px;
+      height: 210px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #8b949e;
+      font-size: 0.75rem;
       text-align: center;
-      margin-top: 1.5rem;
+      padding: 6px;
+      scroll-snap-align: start;
     }
-
-    .timer-display {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      min-height: 28px;
-    }
-
-    .btn-timer-trigger {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
+    .shot-box img {
       width: 100%;
-      max-width: 480px;
-      padding: 18px 24px;
-      background: linear-gradient(135deg, #ff4757, #ff6b81);
-      color: #ffffff;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
-      transition: all 0.25s ease;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
-    .btn-timer-trigger:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 35px rgba(255, 71, 87, 0.6);
-    }
-
-    .btn-download-final {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px 28px;
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #ffffff;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 900;
-      text-decoration: none;
-      border-radius: 16px;
-      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.45);
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-    }
-
-    @media (max-width: 640px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-      .video-card video {
-        height: 420px;
-      }
+    /* फ़ूटर */
+    .footer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: #6e7681;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow"></div>
 
-  <div class="container">
-    <header>
-      <div class="app-badge">🔥 2026 ALGORITHM CRACKED</div>
-      <h1>TagKing AI Studio</h1>
-      <p class="subheading">Reels और Shorts को 1-क्लिक में वायरल करने वाले ट्रेंडिंग AI Hooks, गुप्त SEO Keywords और Hashtags!</p>
-    </header>
+  <div class="wrapper">
 
-    <div class="ad-banner-box">
-      [ ADVERTISEMENT SLOT 1 ]
+    <!-- टॉप हेडर (छोटा व साफ़) -->
+    <div class="top-bar">
+      <span class="brand">⚡ TagKing AI</span>
+      <span class="badge">v1.1 • Verified APK</span>
     </div>
 
-    <div class="section-title">🎬 ऐप कैसे काम करता है (Live Demo)</div>
-    <div class="video-grid">
-      <div class="video-card">
-        <video controls poster="">
-          <source src="demo1.mp4" type="video/mp4">
-          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
-        </video>
-        <p>1-क्लिक में वायरल Hook निकालें 🚀</p>
-      </div>
-
-      <div class="video-card">
-        <video controls poster="">
-          <source src="demo2.mp4" type="video/mp4">
-          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
-        </video>
-        <p>Explore Page वाले गुप्त Keywords 🔥</p>
-      </div>
-    </div>
-
-    <div class="section-title">📺 पूरी गाइड देखें (YouTube)</div>
-    <div class="yt-container">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        title="TagKing Video Guide" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="ad-banner-box">
-      [ ADVERTISEMENT SLOT 2 - HIGH REVENUE ]
-    </div>
-
-    <div class="download-wrapper">
-      <h2 style="font-family:'Outfit'; font-size:1.8rem; margin-bottom:8px;">TagKing APK डाउनलोड करें</h2>
-      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.2rem;">लेटेस्ट वर्जन (v1.1) • 100% सुरक्षित और वेरीफाइड</p>
-
-      <div id="timerText" class="timer-display"></div>
-
-      <button id="startTimerBtn" class="btn-timer-trigger" onclick="startDownloadTimer()">
-        ⚡ डाउनलोड लिंक तैयार करें
+    <!-- 1. डाउनलोड कार्ड + टाइमर (सबसे ऊपर) -->
+    <div class="download-card">
+      <h2>TagKing APK डाउनलोड करें</h2>
+      <p>Android 8.0+ • 100% सेफ़ और सिक्योर</p>
+      <button id="downloadBtn" class="btn-download" disabled>
+        ⏳ 10 सेकंड प्रतीक्षा करें...
       </button>
-
-      <a id="finalDownloadBtn" href="TagKing.apk" class="btn-download-final" download>
-        📥 TagKing APK डाउनलोड करें (Direct)
-      </a>
     </div>
+
+    <!-- 2. ऐड पट्टी 1 -->
+    <div class="ad-strip">
+      <span>[ ADVERTISEMENT SLOT 1 ]</span>
+      <!-- यहाँ Adsterra / Adsense का कोड पेस्ट करें -->
+    </div>
+
+    <!-- 3. वीडियो प्लेयर पट्टी -->
+    <div class="video-strip">
+      <div class="title">🎬 ऐप का लाइव डेमो देखें</div>
+      <div class="video-container">
+        <!-- यहाँ अपनी YouTube वीडियो का Embed लिंक डाल सकते हैं -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- 4. ऐड पट्टी 2 -->
+    <div class="ad-strip">
+      <span>[ ADVERTISEMENT SLOT 2 ]</span>
+      <!-- यहाँ दूसरा ऐड कोड पेस्ट करें -->
+    </div>
+
+    <!-- 5. ऐप के मुख्य फीचर्स (छोटी पट्टी) -->
+    <div class="features-strip">
+      <h3>🔥 TagKing के खास फीचर्स</h3>
+      <div class="features-list">
+        <div>🚀 1-क्लिक में वायरल AI हुक्स और स्क्रिप्ट्स</div>
+        <div>🎯 ट्रेंडिंग और गुप्त SEO कीवर्ड्स</div>
+        <div>📈 Reels और Shorts रीच 10x बूस्टर</div>
+      </div>
+    </div>
+
+    <!-- 6. ऐड पट्टी 3 -->
+    <div class="ad-strip">
+      <span>[ ADVERTISEMENT SLOT 3 ]</span>
+      <!-- यहाँ तीसरा ऐड कोड पेस्ट करें -->
+    </div>
+
+    <!-- 7. ऐप स्क्रीनशॉट्स -->
+    <div class="screenshots-strip">
+      <h3>📱 ऐप स्क्रीनशॉट्स</h3>
+      <div class="screenshots-scroll">
+        <div class="shot-box">
+          <!-- <img src="screen1.png" alt="Screen 1"> -->
+          📸 स्क्रीनशॉट 1<br>(मुख्य स्क्रीन)
+        </div>
+        <div class="shot-box">
+          <!-- <img src="screen2.png" alt="Screen 2"> -->
+          📸 स्क्रीनशॉट 2<br>(टैग जनरेटर)
+        </div>
+        <div class="shot-box">
+          <!-- <img src="screen3.png" alt="Screen 3"> -->
+          📸 स्क्रीनशॉट 3<br>(हुक लाइब्रेरी)
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2026 TagKing AI Studio. All rights reserved.
+    </div>
+
   </div>
 
   <script>
-    function startDownloadTimer() {
-      const triggerBtn = document.getElementById('startTimerBtn');
-      const timerDisplay = document.getElementById('timerText');
-      const finalBtn = document.getElementById('finalDownloadBtn');
+    // 10 सेकंड का डाउनलोड टाइमर
+    let timeLeft = 10;
+    const downloadBtn = document.getElementById('downloadBtn');
 
-      triggerBtn.style.display = 'none';
-      let timeLeft = 10;
+    const countdown = setInterval(() => {
+      timeLeft--;
+      if (timeLeft > 0) {
+        downloadBtn.innerText = `⏳ ${timeLeft} सेकंड प्रतीक्षा करें...`;
+      } else {
+        clearInterval(countdown);
+        downloadBtn.innerText = "⚡ डाउनलोड TagKing APK (Direct)";
+        downloadBtn.disabled = false;
+      }
+    }, 1000);
 
-      timerDisplay.innerHTML = `⏳ कृपया इंतज़ार करें: <span style="font-size:1.4rem; color:#ff4757;">${timeLeft}</span> सेकंड...`;
-
-      const countdown = setInterval(() => {
-        timeLeft--;
-        if (timeLeft > 0) {
-          timerDisplay.innerHTML = `⏳ कृपया इंतज़ार करें: <span style="font-size:1.4rem; color:#ff4757;">${timeLeft}</span> सेकंड...`;
-        } else {
-          clearInterval(countdown);
-          timerDisplay.innerHTML = "✅ लिंक तैयार है!";
-          finalBtn.style.display = 'inline-flex';
-        }
-      }, 1000);
-    }
+    // क्लिक करने पर सीधे APK डाउनलोड
+    downloadBtn.addEventListener('click', () => {
+      window.location.href = "TagKing.apk";
+    });
   </script>
+
 </body>
 </html>
