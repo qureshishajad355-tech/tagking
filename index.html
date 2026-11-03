@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TagKing APK Download</title>
 
-  <!-- Monetag In-Page Push (Banner) Zone Script -->
-  <script>(function(s){s.dataset.zone='12182857',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
   <style>
     * {
       box-sizing: border-box;
@@ -28,7 +25,7 @@
       max-width: 440px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     /* 1. टॉप हेडर */
@@ -95,64 +92,48 @@
       box-shadow: none;
     }
 
-    /* ऐड्स पट्टियाँ */
-    .ad-strip-full, .side-ad-box {
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .ad-strip-full {
+    /* 3. फिक्स डिस्प्ले बैनर कंटेनर (A-Ads) */
+    .ad-banner-box {
       width: 100%;
-      min-height: 75px;
-      background: #161b22;
-      border: 1px dashed #30363d;
-      border-radius: 8px;
+      min-height: 250px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 6px;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-    .ad-strip-full:hover, .side-ad-box:hover {
-      border-color: #58a6ff;
-    }
-    .ad-label {
-      font-size: 0.72rem;
-      color: #58a6ff;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    /* 3. वीडियो + साइड ऐड्स */
-    .media-ad-row {
-      display: flex;
-      gap: 10px;
-      width: 100%;
-      align-items: stretch;
-    }
-    .half-video-box {
-      flex: 1.1;
+      align-items: center;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 8px 0;
+      overflow: hidden;
     }
-    .half-video-box .v-title {
-      font-size: 0.72rem;
+    .ad-banner-box iframe {
+      border: 0;
+      padding: 0;
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      display: block;
+    }
+
+    /* 4. वीडियो गाइड */
+    .video-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .video-card .v-title {
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: #c9d1d9;
     }
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 120%;
+      padding-bottom: 56.25%; /* 16:9 आस्पेक्ट रेशियो */
       height: 0;
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 8px;
       background: #000;
     }
     .video-container video {
@@ -162,30 +143,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .side-ads-column {
-      flex: 0.9;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .side-ad-box {
-      flex: 1;
-      min-height: 80px;
-      background: #161b22;
-      border: 1px dashed #30363d;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
-      text-align: center;
-      transition: border-color 0.2s;
     }
 
-    /* 4. फ़ीचर्स */
+    /* 5. फ़ीचर्स */
     .features-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -205,7 +166,7 @@
       color: #c9d1d9;
     }
 
-    /* 5. स्क्रीनशॉट्स */
+    /* 6. स्क्रीनशॉट्स */
     .screenshots-strip {
       background: #161b22;
       border: 1px solid #30363d;
@@ -270,37 +231,30 @@
       </button>
     </div>
 
-    <!-- 3. शीर्ष विज्ञापन पट्टी -->
-    <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="ad-strip-full">
-      <span class="ad-label">🔥 [Sponsored Ad • Click Here]</span>
-    </a>
+    <!-- 3. शीर्ष फिक्स बैनर विज्ञापन -->
+    <!-- BEGIN AADS AD UNIT 2460915 -->
+    <div class="ad-banner-box" id="frame-top">
+      <iframe data-aa='2460915' src='//ad.a-ads.com/2460915/?size=300x250'></iframe>
+    </div>
+    <!-- END AADS AD UNIT 2460915 -->
 
-    <!-- 4. वीडियो + साइड विज्ञापन -->
-    <div class="media-ad-row">
-      <div class="half-video-box">
-        <div class="v-title">⚙️ इंस्टॉल गाइड</div>
-        <div class="video-container">
-          <video autoplay muted loop playsinline width="100%" height="100%">
-            <source src="install-guide.mp4" type="video/mp4">
-            आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
-          </video>
-        </div>
-      </div>
-
-      <div class="side-ads-column">
-        <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="side-ad-box">
-          <span class="ad-label">⚡ [Sponsored 1]</span>
-        </a>
-        <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="side-ad-box">
-          <span class="ad-label">⚡ [Sponsored 2]</span>
-        </a>
+    <!-- 4. वीडियो गाइड -->
+    <div class="video-card">
+      <div class="v-title">⚙️ इंस्टॉल गाइड</div>
+      <div class="video-container">
+        <video autoplay muted loop playsinline width="100%" height="100%">
+          <source src="install-guide.mp4" type="video/mp4">
+          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+        </video>
       </div>
     </div>
 
-    <!-- 5. निचला विज्ञापन -->
-    <a href="https://uplcm.com/4/12182409" target="_blank" rel="noopener noreferrer" class="ad-strip-full">
-      <span class="ad-label">🚀 [Trending Apps & Offers • Check Now]</span>
-    </a>
+    <!-- 5. निचला फिक्स बैनर विज्ञापन -->
+    <!-- BEGIN AADS AD UNIT 2460915 -->
+    <div class="ad-banner-box" id="frame-bottom">
+      <iframe data-aa='2460915' src='//ad.a-ads.com/2460915/?size=300x250'></iframe>
+    </div>
+    <!-- END AADS AD UNIT 2460915 -->
 
     <!-- 6. फीचर्स -->
     <div class="features-strip">
@@ -335,7 +289,6 @@
   </div>
 
   <script>
-    const directAdLink = "https://uplcm.com/4/12182409";
     let timeLeft = 10;
     const downloadBtn = document.getElementById('downloadBtn');
 
@@ -351,12 +304,8 @@
     }, 1000);
 
     downloadBtn.addEventListener('click', () => {
-      // 1. नए टैब में विज्ञापन खोलें
-      window.open(directAdLink, '_blank');
-      // 2. उसी टैब में APK डाउनलोड शुरू करें
-      setTimeout(() => {
-        window.location.href = "TagKing.apk";
-      }, 500);
+      // सीधी APK फाइल डाउनलोड होगी बिना किसी फालतू पॉपअप/ऐड रीडायरेक्ट के
+      window.location.href = "TagKing.apk";
     });
   </script>
 
