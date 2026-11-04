@@ -92,10 +92,10 @@
       box-shadow: none;
     }
 
-    /* 468x60 लंबी पट्टियाँ (ऊपर और नीचे) */
+    /* 320x50 लंबी पट्टियाँ (ऊपर और नीचे) */
     .ad-strip-container {
       width: 100%;
-      min-height: 64px;
+      min-height: 54px;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 8px;
@@ -104,12 +104,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-    }
-    .ad-strip-container iframe {
-      max-width: 100%;
-      height: 60px;
-      border: 0;
-      display: block;
     }
 
     /* वीडियो + साइड 2 ऐड्स रो */
@@ -138,7 +132,7 @@
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 155%; /* मोबाइल स्क्रीन वीडियो के लिए लंबा पोर्ट्रेट अनुपात */
+      padding-bottom: 155%;
       height: 0;
       overflow: hidden;
       border-radius: 6px;
@@ -154,7 +148,7 @@
       border-radius: 6px;
     }
 
-    /* दाएं तरफ 2 छोटे ऐड बॉक्स */
+    /* दाएं तरफ 2 ऐड बॉक्स */
     .side-ads-column {
       flex: 0.85;
       display: flex;
@@ -170,15 +164,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
+      padding: 2px;
       overflow: hidden;
       min-height: 130px;
     }
     .side-ad-box iframe {
-      border: 0;
-      width: 125px;
-      height: 125px;
-      display: block;
+      max-width: 100% !important;
+      height: auto !important;
     }
 
     /* फ़ीचर्स */
@@ -266,15 +258,21 @@
       </button>
     </div>
 
-    <!-- 3. पहली लंबी पट्टी (468x60 स्ट्रिप) -->
-    <!-- BEGIN AADS AD UNIT 2460917 -->
+    <!-- 3. पहली लंबी पट्टी (Adsterra 320x50) -->
     <div class="ad-strip-container" id="strip-top">
-      <iframe data-aa='2460917' src='//ad.a-ads.com/2460917/?size=468x60'
-              style='border:0; padding:0; width:468px; height:60px; overflow:hidden; display:block; margin:auto'></iframe>
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '371e643d64edd994876ae446b169ab31',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="https://bellnewyork.org/22/371e643d64edd994876ae446b169ab31"></script>
     </div>
-    <!-- END AADS AD UNIT 2460917 -->
 
-    <!-- 4. वीडियो + साइड 2x (125x125) ऐड्स -->
+    <!-- 4. वीडियो + साइड 2x (Adsterra 300x250) ऐड्स -->
     <div class="media-ad-row">
       <!-- बायाँ हिस्सा: वीडियो गाइड -->
       <div class="half-video-box">
@@ -287,33 +285,51 @@
         </div>
       </div>
 
-      <!-- दायाँ हिस्सा: ऊपर-नीचे 2 छोटे ऐड -->
+      <!-- दायाँ हिस्सा: ऊपर-नीचे 2 ऐड बॉक्स (Adsterra 300x250) -->
       <div class="side-ads-column">
-        <!-- साइड ऐड 1 [ADVERTISEMENT 2] -->
-        <!-- BEGIN AADS AD UNIT 2460919 -->
+        <!-- साइड ऐड 1 -->
         <div class="side-ad-box" id="side-ad-1">
-          <iframe data-aa='2460919' src='//ad.a-ads.com/2460919/?size=125x125'
-                  style='border:0; padding:0; width:125px; height:125px; overflow:hidden; display:block; margin:auto'></iframe>
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '4d33963df8eef703cc173105a3536625',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          </script>
+          <script type="text/javascript" src="https://bellnewyork.org/22/4d33963df8eef703cc173105a3536625"></script>
         </div>
-        <!-- END AADS AD UNIT 2460919 -->
 
-        <!-- साइड ऐड 2 [ADVERTISEMENT 3] -->
-        <!-- BEGIN AADS AD UNIT 2460919 -->
+        <!-- साइड ऐड 2 -->
         <div class="side-ad-box" id="side-ad-2">
-          <iframe data-aa='2460919' src='//ad.a-ads.com/2460919/?size=125x125'
-                  style='border:0; padding:0; width:125px; height:125px; overflow:hidden; display:block; margin:auto'></iframe>
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '4d33963df8eef703cc173105a3536625',
+              'format' : 'iframe',
+              'height' : 250,
+              'width' : 300,
+              'params' : {}
+            };
+          </script>
+          <script type="text/javascript" src="https://bellnewyork.org/22/4d33963df8eef703cc173105a3536625"></script>
         </div>
-        <!-- END AADS AD UNIT 2460919 -->
       </div>
     </div>
 
-    <!-- 5. दूसरी लंबी पट्टी [ADVERTISEMENT 4] (468x60 स्ट्रिप) -->
-    <!-- BEGIN AADS AD UNIT 2460917 -->
+    <!-- 5. दूसरी लंबी पट्टी (Adsterra 320x50) -->
     <div class="ad-strip-container" id="strip-bottom">
-      <iframe data-aa='2460917' src='//ad.a-ads.com/2460917/?size=468x60'
-              style='border:0; padding:0; width:468px; height:60px; overflow:hidden; display:block; margin:auto'></iframe>
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '371e643d64edd994876ae446b169ab31',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="https://bellnewyork.org/22/371e643d64edd994876ae446b169ab31"></script>
     </div>
-    <!-- END AADS AD UNIT 2460917 -->
 
     <!-- 6. फीचर्स -->
     <div class="features-strip">
