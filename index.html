@@ -105,27 +105,28 @@
       overflow: hidden;
     }
 
-    /* वीडियो + साइड 2 ऐड्स रो (एक ही स्क्रीन में फिट होने के लिए कॉम्पैक्ट ऊँचाई) */
+    /* वीडियो (बड़ा हिस्सा) + साइड 2 ऐड्स रो */
     .media-ad-row {
       display: flex;
       gap: 8px;
       width: 100%;
-      height: 276px;
+      height: 280px;
       align-items: stretch;
     }
     .half-video-box {
-      flex: 1.1;
+      width: 54%;
+      min-width: 0;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 5px;
+      padding: 6px;
       display: flex;
       flex-direction: column;
     }
     .half-video-box .v-title {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       color: #c9d1d9;
       flex-shrink: 0;
     }
@@ -147,9 +148,10 @@
       border-radius: 6px;
     }
 
-    /* दाएं तरफ 2 ऐड बॉक्स */
+    /* दाएं तरफ 2 ऐड बॉक्स (वीडियो को बिना दबाए) */
     .side-ads-column {
-      flex: 0.9;
+      width: 46%;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -157,7 +159,8 @@
     }
     .side-ad-box {
       flex: 1;
-      height: 135px;
+      height: 137px;
+      width: 100%;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 8px;
@@ -175,9 +178,9 @@
       display: block;
       flex-shrink: 0;
     }
-    /* साइड वाले 300x250 बैनर को बॉक्स में पूरा फिट दिखाने के लिए स्केल */
+    /* साइड वाले 300x250 बैनर को छोटे बॉक्स में पूरा फिट दिखाने के लिए स्केल */
     .side-ad-box .safe-ad-frame {
-      transform: scale(0.52);
+      transform: scale(0.50);
       transform-origin: center center;
     }
 
@@ -272,7 +275,7 @@
 
     <!-- 4. वीडियो + साइड 2x (Adsterra 300x250) ऐड्स -->
     <div class="media-ad-row">
-      <!-- बायाँ हिस्सा: वीडियो गाइड -->
+      <!-- बायाँ हिस्सा: बड़ा इंस्टॉल गाइड वीडियो -->
       <div class="half-video-box">
         <div class="v-title">⚙️ इंस्टॉल गाइड</div>
         <div class="video-container">
