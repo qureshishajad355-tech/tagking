@@ -168,9 +168,13 @@
       overflow: hidden;
       min-height: 130px;
     }
-    .side-ad-box iframe {
-      max-width: 100% !important;
-      height: auto !important;
+
+    /* सुरक्षित Sandbox Iframe स्टाइल */
+    .safe-ad-frame {
+      border: none;
+      overflow: hidden;
+      display: block;
+      max-width: 100%;
     }
 
     /* फ़ीचर्स */
@@ -258,19 +262,8 @@
       </button>
     </div>
 
-    <!-- 3. पहली लंबी पट्टी (Adsterra 320x50) -->
-    <div class="ad-strip-container" id="strip-top">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '371e643d64edd994876ae446b169ab31',
-          'format' : 'iframe',
-          'height' : 50,
-          'width' : 320,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="https://bellnewyork.org/22/371e643d64edd994876ae446b169ab31"></script>
-    </div>
+    <!-- 3. पहली लंबी पट्टी (Adsterra 320x50 - Sandbox Locked) -->
+    <div class="ad-strip-container" id="strip-top"></div>
 
     <!-- 4. वीडियो + साइड 2x (Adsterra 300x250) ऐड्स -->
     <div class="media-ad-row">
@@ -285,51 +278,15 @@
         </div>
       </div>
 
-      <!-- दायाँ हिस्सा: ऊपर-नीचे 2 ऐड बॉक्स (Adsterra 300x250) -->
+      <!-- दायाँ हिस्सा: ऊपर-नीचे 2 ऐड बॉक्स (Adsterra 300x250 - Sandbox Locked) -->
       <div class="side-ads-column">
-        <!-- साइड ऐड 1 -->
-        <div class="side-ad-box" id="side-ad-1">
-          <script type="text/javascript">
-            atOptions = {
-              'key' : '4d33963df8eef703cc173105a3536625',
-              'format' : 'iframe',
-              'height' : 250,
-              'width' : 300,
-              'params' : {}
-            };
-          </script>
-          <script type="text/javascript" src="https://bellnewyork.org/22/4d33963df8eef703cc173105a3536625"></script>
-        </div>
-
-        <!-- साइड ऐड 2 -->
-        <div class="side-ad-box" id="side-ad-2">
-          <script type="text/javascript">
-            atOptions = {
-              'key' : '4d33963df8eef703cc173105a3536625',
-              'format' : 'iframe',
-              'height' : 250,
-              'width' : 300,
-              'params' : {}
-            };
-          </script>
-          <script type="text/javascript" src="https://bellnewyork.org/22/4d33963df8eef703cc173105a3536625"></script>
-        </div>
+        <div class="side-ad-box" id="side-ad-1"></div>
+        <div class="side-ad-box" id="side-ad-2"></div>
       </div>
     </div>
 
-    <!-- 5. दूसरी लंबी पट्टी (Adsterra 320x50) -->
-    <div class="ad-strip-container" id="strip-bottom">
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '371e643d64edd994876ae446b169ab31',
-          'format' : 'iframe',
-          'height' : 50,
-          'width' : 320,
-          'params' : {}
-        };
-      </script>
-      <script type="text/javascript" src="https://bellnewyork.org/22/371e643d64edd994876ae446b169ab31"></script>
-    </div>
+    <!-- 5. दूसरी लंबी पट्टी (Adsterra 320x50 - Sandbox Locked) -->
+    <div class="ad-strip-container" id="strip-bottom"></div>
 
     <!-- 6. फीचर्स -->
     <div class="features-strip">
@@ -364,6 +321,47 @@
   </div>
 
   <script>
+    // चारों Adsterra बैनर्स को Sandbox Iframe में लोड करने वाला सुरक्षा फंक्शन
+    function loadSafeBanner(containerId, adKey, width, height) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const iframe = document.createElement('iframe');
+      iframe.className = 'safe-ad-frame';
+      iframe.width = width;
+      iframe.height = height;
+      iframe.scrolling = 'no';
+      // यहाँ allow-top-navigation जानबूझकर नहीं दिया गया है ताकि कोई भी ऐड पेज को रीडायरेक्ट न कर सके
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
+
+      iframe.srcdoc = `
+        <!DOCTYPE html>
+        <html>
+        <head><style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;}</style></head>
+        <body>
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '${adKey}',
+              'format' : 'iframe',
+              'height' : ${height},
+              'width' : ${width},
+              'params' : {}
+            };
+          <\/script>
+          <script type="text/javascript" src="https://bellnewyork.org/22/${adKey}"><\/script>
+        </body>
+        </html>
+      `;
+      container.appendChild(iframe);
+    }
+
+    // चारों बैनर लोड करें
+    loadSafeBanner('strip-top', '371e643d64edd994876ae446b169ab31', 320, 50);
+    loadSafeBanner('side-ad-1', '4d33963df8eef703cc173105a3536625', 300, 250);
+    loadSafeBanner('side-ad-2', '4d33963df8eef703cc173105a3536625', 300, 250);
+    loadSafeBanner('strip-bottom', '371e643d64edd994876ae446b169ab31', 320, 50);
+
+    // 10 सेकंड डाउनलोड टाइमर
     let timeLeft = 10;
     const downloadBtn = document.getElementById('downloadBtn');
 
