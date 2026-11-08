@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TagKing APK Download</title>
 
+  <!-- ऐड सर्वर से तुरंत कनेक्शन जोड़ने के लिए Preconnect -->
+  <link rel="preconnect" href="https://bellnewyork.org" crossorigin>
+  <link rel="dns-prefetch" href="https://bellnewyork.org">
+
   <style>
     * {
       box-sizing: border-box;
@@ -148,7 +152,7 @@
       border-radius: 6px;
     }
 
-    /* दाएं तरफ 2 ऐड बॉक्स (वीडियो को बिना दबाए) */
+    /* दाएं तरफ 2 ऐड बॉक्स */
     .side-ads-column {
       width: 46%;
       min-width: 0;
@@ -178,7 +182,6 @@
       display: block;
       flex-shrink: 0;
     }
-    /* साइड वाले 300x250 बैनर को छोटे बॉक्स में पूरा फिट दिखाने के लिए स्केल */
     .side-ad-box .safe-ad-frame {
       transform: scale(0.50);
       transform-origin: center center;
@@ -275,13 +278,12 @@
 
     <!-- 4. वीडियो + साइड 2x (Adsterra 300x250) ऐड्स -->
     <div class="media-ad-row">
-      <!-- बायाँ हिस्सा: बड़ा इंस्टॉल गाइड वीडियो -->
+      <!-- बायाँ हिस्सा: वीडियो (ऐड्स लोड होने के तुरंत बाद चालू होगा) -->
       <div class="half-video-box">
         <div class="v-title">⚙️ इंस्टॉल गाइड</div>
         <div class="video-container">
-          <video autoplay muted loop playsinline width="100%" height="100%">
-            <source src="install-guide.mp4" type="video/mp4">
-            आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+          <video id="guideVideo" muted loop playsinline preload="none" width="100%" height="100%">
+            <source data-src="install-guide.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -306,18 +308,18 @@
       </div>
     </div>
 
-    <!-- 7. स्क्रीनशॉट्स -->
+    <!-- 7. स्क्रीनशॉट्स (Lazy Load ताकि शुरुआती स्पीड तेज़ रहे) -->
     <div class="screenshots-strip">
       <h3>📱 ऐप स्क्रीनशॉट्स</h3>
       <div class="screenshots-scroll">
         <div class="shot-box">
-          <img src="shot1.jpg" alt="TagKing Screen 1">
+          <img src="shot1.jpg" loading="lazy" alt="TagKing Screen 1">
         </div>
         <div class="shot-box">
-          <img src="screen2.jpg" alt="TagKing Screen 2">
+          <img src="screen2.jpg" loading="lazy" alt="TagKing Screen 2">
         </div>
         <div class="shot-box">
-          <img src="screen3.jpg" alt="TagKing Screen 3">
+          <img src="screen3.jpg" loading="lazy" alt="TagKing Screen 3">
         </div>
       </div>
     </div>
@@ -329,7 +331,7 @@
   </div>
 
   <script>
-    // चारों Adsterra बैनर्स को Sandbox Iframe में लोड करने वाला सुरक्षा फंक्शन
+    // 1. सबसे पहले चारों बैनर्स को एक साथ लोड करें (0ms देरी के साथ)
     function loadSafeBanner(containerId, adKey, width, height) {
       const container = document.getElementById(containerId);
       if (!container) return;
@@ -362,13 +364,23 @@
       container.appendChild(iframe);
     }
 
-    // चारों बैनर लोड करें
     loadSafeBanner('strip-top', '371e643d64edd994876ae446b169ab31', 320, 50);
     loadSafeBanner('side-ad-1', '4d33963df8eef703cc173105a3536625', 300, 250);
     loadSafeBanner('side-ad-2', '4d33963df8eef703cc173105a3536625', 300, 250);
     loadSafeBanner('strip-bottom', '371e643d64edd994876ae446b169ab31', 320, 50);
 
-    // 10 सेकंड डाउनलोड टाइमर
+    // 2. ऐड्स की रिक्वेस्ट जाने के 1.5 सेकंड बाद वीडियो चालू करें ताकि स्पीड न बंटे
+    setTimeout(() => {
+      const video = document.getElementById('guideVideo');
+      const source = video.querySelector('source');
+      if (source && source.dataset.src) {
+        source.src = source.dataset.src;
+        video.load();
+        video.play().catch(() => {});
+      }
+    }, 1500);
+
+    // 3. 10 सेकंड डाउनलोड टाइमर
     let timeLeft = 10;
     const downloadBtn = document.getElementById('downloadBtn');
 
