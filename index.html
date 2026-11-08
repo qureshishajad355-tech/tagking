@@ -18,14 +18,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 12px 10px 40px;
+      padding: 8px 8px 30px;
     }
     .wrapper {
       width: 100%;
       max-width: 440px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
     /* 1. हेडर */
@@ -33,18 +33,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 6px 10px;
+      padding: 5px 10px;
       background: rgba(255, 255, 255, 0.04);
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .top-bar .brand {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #ff7b72;
     }
     .top-bar .badge {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: #3fb950;
       background: rgba(63, 185, 80, 0.15);
       padding: 2px 8px;
@@ -56,27 +56,27 @@
     .download-card {
       background: linear-gradient(145deg, #161b22, #0f141c);
       border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 14px 12px;
+      border-radius: 10px;
+      padding: 10px 10px;
       text-align: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
     .download-card h2 {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+      font-size: 1rem;
+      margin-bottom: 2px;
     }
     .download-card p {
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       color: #8b949e;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .btn-download {
       display: block;
       width: 100%;
-      padding: 12px 10px;
+      padding: 10px 10px;
       border: none;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
@@ -95,45 +95,44 @@
     /* 320x50 लंबी पट्टियाँ (ऊपर और नीचे) */
     .ad-strip-container {
       width: 100%;
-      min-height: 54px;
+      height: 54px;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 8px;
-      padding: 2px;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
     }
 
-    /* वीडियो + साइड 2 ऐड्स रो */
+    /* वीडियो + साइड 2 ऐड्स रो (एक ही स्क्रीन में फिट होने के लिए कॉम्पैक्ट ऊँचाई) */
     .media-ad-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
+      height: 276px;
       align-items: stretch;
     }
     .half-video-box {
-      flex: 1.15;
+      flex: 1.1;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 6px;
+      padding: 5px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
     .half-video-box .v-title {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: #c9d1d9;
+      flex-shrink: 0;
     }
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 155%;
-      height: 0;
+      flex: 1;
       overflow: hidden;
       border-radius: 6px;
       background: #000;
@@ -150,23 +149,23 @@
 
     /* दाएं तरफ 2 ऐड बॉक्स */
     .side-ads-column {
-      flex: 0.85;
+      flex: 0.9;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
     }
     .side-ad-box {
       flex: 1;
+      height: 135px;
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2px;
       overflow: hidden;
-      min-height: 130px;
+      position: relative;
     }
 
     /* सुरक्षित Sandbox Iframe स्टाइल */
@@ -174,7 +173,12 @@
       border: none;
       overflow: hidden;
       display: block;
-      max-width: 100%;
+      flex-shrink: 0;
+    }
+    /* साइड वाले 300x250 बैनर को बॉक्स में पूरा फिट दिखाने के लिए स्केल */
+    .side-ad-box .safe-ad-frame {
+      transform: scale(0.52);
+      transform-origin: center center;
     }
 
     /* फ़ीचर्स */
@@ -183,6 +187,7 @@
       border: 1px solid #30363d;
       border-radius: 10px;
       padding: 10px 12px;
+      margin-top: 4px;
     }
     .features-strip h3 {
       font-size: 0.85rem;
@@ -331,7 +336,6 @@
       iframe.width = width;
       iframe.height = height;
       iframe.scrolling = 'no';
-      // यहाँ allow-top-navigation जानबूझकर नहीं दिया गया है ताकि कोई भी ऐड पेज को रीडायरेक्ट न कर सके
       iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
 
       iframe.srcdoc = `
